@@ -9,6 +9,16 @@ defmodule ApiWeb.Router do
     pipe_through :api
   end
 
+  pipeline :browser do
+    plug(:accepts, ["html"])
+  end
+
+  # Define which is the path for the controller
+  scope "/", ApiWeb do
+    pipe_through :browser
+    get "/", DefaultController, :index
+  end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put
