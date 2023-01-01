@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:11.3-alpine
+    restart: always
+    container_name: store
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=api_dev
+      - POSTGRES_PASSWORD=postgres
+    # secrets:
+    #   - db_password

@@ -1,0 +1,5 @@
+FROM postgres 
+
+ENV POSTGRES_USERNAME postgres
+ENV POSTGRES_PASSWORD postgres 
+ENV POSTGRES_DB api_dev 
